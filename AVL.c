@@ -1,19 +1,18 @@
-
 // Linkers
 #include <stdio.h>
 #include <stdlib.h>
 
+// Global
 
+// Struct typedef
+typedef struct node{
 
-// Global variables
-
-typedef struct nodes{
-    struct nodes *parent; 
-    struct nodes *left_child;
-    struct nodes *right_child;
-    int val;     
+    int val;
+    struct node* left_child;
+    struct node* right_child;
 }node;
 
+// Preseting root pointer too null
 node* root = NULL;
 
 // Prototypes
@@ -23,7 +22,8 @@ void postorder(node* curr_node);
 int tree_height(node* curr_node);
 void balance_node(node* passed_node);
 
-// Main functions
+
+// Main
 
 void main()
 {
@@ -54,16 +54,15 @@ void main()
         }
     }while(x != 0);
     
-    
-
 }
 
-// Function declarations
+
+//
+
 
 node* prep_node(int x)
 {
     node* temp = malloc(sizeof(node));          
-    temp -> parent = NULL;
     temp -> left_child = NULL;              
     temp -> right_child = NULL;
     temp -> val = x;
