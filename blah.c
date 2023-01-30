@@ -1,8 +1,15 @@
 #include<stdio.h>
 
+int min(int a, int b)
+{
+    return ((a < b) ? a : b);
+}
+
 void main()
 {
-    char strs[2][1] = {{"Blah"},{"Blue"}};
+    
 
-
+    printf("%d", min(5, 7));
+    
+    
 }
